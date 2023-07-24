@@ -1,9 +1,9 @@
-import React from 'react';
-import RatingComponent from '../src/components/RatingComponent';
+import React from "react";
+import RatingComponent from "../src/components/RatingComponent";
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
       <RatingComponent />
     </div>
   );
