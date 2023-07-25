@@ -29,20 +29,22 @@ function RatingComponent() {
   const ratings = [1, 2, 3, 4, 5];
 
   return (
-    <div>
+    <div style={{ width: "400px", height: "450px" }}>
       {!isSubmitted && (
-        <div className="bg-slate-800 rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-white">How did we do?</h2>
-          <p className="text-gray-400">
-            Please let us know how we did with your support request. All
-            feedback is appreciated to help us improve our offering!
+        <div className="bg-slate-800 rounded-lg p-12 flex flex-col justify-center items-center">
+          <h2 className="text-2xl font-bold text-white text-left mr-28 mb-2">
+            How did we do?
+          </h2>
+          <p className="text-gray-500 text-base mb-2">
+            Please let us know how we did with your support request. 
+            All feedback is appreciated to help us improve our offering!
           </p>
-          <div className="mt-4">
+          <div className="mt-3 flex flex-wrap gap-2 justify-center">
             {ratings.map((value) => (
               <button
                 key={value}
                 onClick={() => handleRatingClick(value)}
-                className="mr-2 px-4 py-2 rounded bg-white text-indigo-800 font-bold"
+                className="px-5 py-3 ml-1 rounded-full bg-slate-700 text-slate-500 font-bold text-lg hover:bg-orange-500"
               >
                 {value}
               </button>
@@ -50,7 +52,7 @@ function RatingComponent() {
           </div>
           <button
             onClick={handleRatingSubmit}
-            className="mt-4 px-4 py-2 rounded bg-white text-indigo-800 font-bold"
+            className="px-4 py-2 rounded-full bg-orange-600 text-white font-bold text-lg mt-5 w-72"
           >
             Submit
           </button>
@@ -59,7 +61,6 @@ function RatingComponent() {
 
       {isSubmitted && (
         <div>
-          {/* Display the selected rating */}
           <p>You selected {rating} out of 5</p>
           <h2>Thank you!</h2>
           <p>
@@ -69,7 +70,6 @@ function RatingComponent() {
         </div>
       )}
 
-      {/* Modal for showing the alert */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={handleCloseModal}
